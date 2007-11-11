@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/smarter-archives/
 Author: rob1n
 Author URI: http://robinadr.com/
 Description: A unique way of displaying month links by year. Based on <a href="http://justinblanton.com/projects/smartarchives/">original code by Justin Blanton</a>, but much enhanced. Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">APL 2.0</a>.
-Version: 1.0
+Version: 1.0.1
 
 	Copyright 2007 Robin Adrianse a.k.a. rob1n
 	
@@ -33,7 +33,7 @@ function wp_smart_archives()
 		return;
 	}
 	
-	$months_short = array( '', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' );
+	$months_short = apply_filters( 'smarter_archives_months', array( '', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ) );
 	
 	print '<div class="smart-archives">';
 	

@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 2.3
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Presents archive navigation in a unique way.
 
