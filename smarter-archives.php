@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/smarter-archives/
 Author: rob1n
 Author URI: http://robinadr.com/
 Description: A unique way of displaying month links by year. Based on <a href="http://justinblanton.com/projects/smartarchives/">original code by Justin Blanton</a>, but much enhanced. Licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">APL 2.0</a>.
-Version: 1.0.1
+Version: 1.5
 
 	Copyright 2007 Robin Adrianse a.k.a. rob1n
 	
