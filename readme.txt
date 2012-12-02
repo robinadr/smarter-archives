@@ -1,8 +1,8 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 2.3
-Stable tag: 1.0.1
+Tested up to: 3.4.2
+Stable tag: 1.1
 
 Presents archive navigation in a unique way.
 
