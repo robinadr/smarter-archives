@@ -88,4 +88,11 @@ function wp_smart_archives( $args = '' )
 	printf( '</%s>', $options['wrapper_tag'] );
 }
 
+function wp_smart_archives_init() {
+	$plugin_dir = basename( dirname( __FILE__ ) );
+	load_plugin_textdomain( 'smarter-archives', false, $plugin_dir );
+}
+
+add_action( 'plugins_loaded', 'wp_smart_archives_init' );
+
 ?>
