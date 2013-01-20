@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 3.5
-Stable tag: 1.5
+Stable tag: 2.0
 
 Gives a unique way of navigating the yearly and monthly archives of your blog. 
 Highly customizable in its output, and ready for translation.

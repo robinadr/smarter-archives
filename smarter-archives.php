@@ -30,18 +30,20 @@ function wp_smart_archives( $args = '' )
 {
 	global $wpdb;
 	
-	$options = array(
+	$defaults = array(
 		'mode' => 'default', 
 		'wrapper_class' => 'smart-archives', 
 		'wrapper_tag' => 'div', 
 		'year_link_class' => 'year-link', 
 		'year_tag' => 'p', 
+		'after_year' => ': ', 
 		'month_link_class' => 'month-link', 
 		'month_tag' => 'span', 
 		'empty_month_class' => 'empty-month'
 	);
 	
-	parse_str( $args, $options );
+	parse_str( $args, $args_array );
+	$options = array_merge( $defaults, $args_array );
 	
 	$years = $wpdb->get_results(
 		"SELECT DISTINCT YEAR(post_date) AS year, COUNT(ID) as post_count 
@@ -68,11 +70,11 @@ function wp_smart_archives( $args = '' )
 	}
 	
 	foreach ( $years as $year ) {
-		printf( '<%s><a class="%s" href="%s">%s</a>', $options['year_tag'], $options['year_link_class'], get_year_link( $year->year ), $year->year );
+		printf( '<%s><a class="%s" href="%s">%s</a>%s', $options['year_tag'], $options['year_link_class'], get_year_link( $year->year ), $year->year, $options['after_year'] );
 		
 		for ( $month = 1; $month <= 12; $month++ ) {
-			if ( (int) $wpdb->get)var( "SELECT COUNT(ID) FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' AND year(post_date) = '$year->year' AND month(post_date) = '$month'" ) > 0 ) {
-				printf( '<%s><a href="%s" title="%s">%s</a></%s>', $options['month_tag'], get_month_link( $year->year, $month ), $short_months[$month], $options['month_tag'] );
+			if ( (int) $wpdb->get_var( "SELECT COUNT(ID) FROM $wpdb->posts WHERE post_type = 'post' AND post_status = 'publish' AND year(post_date) = '$year->year' AND month(post_date) = '$month'" ) > 0 ) {
+				printf( '<%s><a href="%s" title="%s">%s</a></%s>', $options['month_tag'], get_month_link( $year->year, $month ), $short_months[$month], $short_months[$month], $options['month_tag'] );
 			} else {
 				printf( '<%s class="%s">%s</%s>', $options['month_tag'], $options['empty_month_class'], $short_months[$month], $options['month_tag'] );
 			}
