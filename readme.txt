@@ -1,8 +1,8 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 3.5
-Stable tag: 2.0
+Tested up to: 3.5.1
+Stable tag: 2.0.1
 
 Gives a unique way of navigating the yearly and monthly archives of your blog. 
 Highly customizable in its output, and ready for translation.
@@ -41,6 +41,10 @@ You need a plugin that enables you to put PHP code directly in your posts.
 Alternatively, you can create a template page for your archives page.
 
 == Changelog ==
+
+= 2.0.1 =
+
+* updated WordPress compatibility to 3.5.1
 
 = 2.0 =
 
