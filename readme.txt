@@ -43,9 +43,7 @@ Alternatively, you can create a template page for your archives page.
 
 = 2.5 =
 
-* Optimized code, now using more of WP's built-in functions
-* More options to customize the output (or choose to return it now!) -- see code comments for information about options
-* `wp_smart_archives` template tag is now deprecated (but still functional) in favor of **`smarter_archives`**
+[View changes for 2.5 here](http://robinadr.com/2013/04/smarter-archives-2-5).
 
 = 2.0.1 =
 
