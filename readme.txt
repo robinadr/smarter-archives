@@ -2,33 +2,32 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 3.5.1
-Stable tag: 2.0.1
+Stable tag: 2.5
 
 Gives a unique way of navigating the yearly and monthly archives of your blog. 
-Highly customizable in its output, and ready for translation.
+Customizable in its output, and ready for translation.
 
 == Description ==
 
 This plugin provides you with a template tag for your archives page, which presents navigating 
-the archives in a unique way. It has a row for each year that you posted during, and every month 
-in that year with posts has a link. It is also built to be easy to style with CSS, and everything 
+the archives in a unique way. It has a row for each year during which you posted, and every month 
+in that year during which you posted has a link. It is also built to be easy to style with CSS, and everything 
 is semantic and has a CSS class.
 
 The plugin's output is completely customizable (both HTML tags and CSS classes) and support for 
-translations is built-in.
+translations is built-in (domain is `smarter-archives`).
 
 The idea and code was based on the [original Smart Archives plugin](http://justinblanton.com/projects/smartarchives/) 
-by [Justin Blanton](http://justinblanton.com/). I just found that its output wasn't to my 
-liking, and I enhanced it a bit and recoded portions.
+by [Justin Blanton](http://justinblanton.com/).
 
 == Installation ==
 
 1. Download and unzip the archive file.
-2. Upload the `smarter-archives` to `wp-content/plugins/`.
+2. Upload the `smarter-archives.php` file to `wp-content/plugins/`.
 3. Activate *Smarter Archives* in the WordPress admin plugins screen.
-4. Put the template tag (`<?php wp_smart_archives(); ?>`) either:
-	* In the template's `.php` file.
-	* If you have a plugin that lets you run PHP code installed, you can put it in the page's content, right in the admin panel.
+4. Put the template tag (`<?php smarter_archives(); ?>`) either:
+	* In the template `.php` file.
+	* If you have a plugin that lets you run PHP code from within the posts/pages, you can put it in the page's content, right in the admin panel.
 5. Enjoy.
 
 == Frequently Asked Questions ==
@@ -42,20 +41,26 @@ Alternatively, you can create a template page for your archives page.
 
 == Changelog ==
 
+= 2.5 =
+
+* Optimized code, now using more of WP's built-in functions
+* More options to customize the output (or choose to return it now!) -- see code comments for information about options
+* `wp_smart_archives` template tag is now deprecated (but still functional) in favor of **`smarter_archives`**
+
 = 2.0.1 =
 
-* updated WordPress compatibility to 3.5.1
+* Updated WordPress compatibility to 3.5.1
 
 = 2.0 =
 
-* updated WordPress compatibility to 3.5
-* main function's output is now completely customizable
+* Updated WordPress compatibility to 3.5
+* Main function's output is now completely customizable
 * i18n support added; English domain included
 * Smarter Archives is now licensed under the GPL v2 license
 
 = 1.5 =
 
-* updated WordPress compatibility to 3.4.2
+* Updated WordPress compatibility to 3.4.2
 
 == License ==
 
