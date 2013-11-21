@@ -27,16 +27,6 @@ Text Domain: smarter-archives
 
 */
 
-function __sa( $x )
-{
-	if ( is_array($x) ) {
-		foreach ( $x as $k => $v )
-			$x[$k] = __($v, 'smarter-archives');
-		return $x;
-	} else
-		return __($x, 'smarter-archives');
-}
-
 function smarter_archives( $args = '' )
 {
 	$defaults = apply_filters('smarter_archives_defaults', array(
@@ -71,7 +61,14 @@ function smarter_archives( $args = '' )
 	if ( empty($years) )
 		return;
 	
-	$sm = __sa(apply_filters('smarter_archives_months', array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')));
+	$sm = array(
+		__('Jan', 'smarter-archives'), __('Feb', 'smarter-archives'), __('Mar', 'smarter-archives'), 
+		__('Apr', 'smarter-archives'), __('May', 'smarter-archives'), __('Jun', 'smarter-archives'), 
+		__('Jul', 'smarter-archives'), __('Aug', 'smarter-archives'), __('Sep', 'smarter-archives'), 
+		__('Oct', 'smarter-archives'), __('Nov', 'smarter-archives'), __('Dec', 'smarter-archives')
+	);
+	
+	$sm = apply_filters('smarter_archives_months', $sm);
 	
 	$output = '';
 	
