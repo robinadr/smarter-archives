@@ -5,7 +5,7 @@ Plugin URI: http://wordpress.org/extend/plugins/smarter-archives/
 Author: Robin A.
 Author URI: http://robinadr.com/
 Description: Unique way to access archives via months, broken down by year. Originally based on <a href="http://justinblanton.com/projects/smartarchives/">code by Justin Blanton</a>.
-Version: 2.6-beta
+Version: 2.5.1
 Text Domain: smarter-archives
 	
 	Smarter Archives plugin for WordPress
