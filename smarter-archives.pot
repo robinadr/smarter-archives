@@ -1,0 +1,84 @@
+# Copyright (C) 2013 Smarter Archives
+# This file is distributed under the same license as the Smarter Archives package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Smarter Archives 2.6-beta\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/smarter-archives\n"
+"POT-Creation-Date: 2013-11-21 17:30:28+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: smarter-archives.php:65
+msgid "Jan"
+msgstr ""
+
+#: smarter-archives.php:65
+msgid "Feb"
+msgstr ""
+
+#: smarter-archives.php:65
+msgid "Mar"
+msgstr ""
+
+#: smarter-archives.php:66
+msgid "Apr"
+msgstr ""
+
+#: smarter-archives.php:66
+msgid "May"
+msgstr ""
+
+#: smarter-archives.php:66
+msgid "Jun"
+msgstr ""
+
+#: smarter-archives.php:67
+msgid "Jul"
+msgstr ""
+
+#: smarter-archives.php:67
+msgid "Aug"
+msgstr ""
+
+#: smarter-archives.php:67
+msgid "Sep"
+msgstr ""
+
+#: smarter-archives.php:68
+msgid "Oct"
+msgstr ""
+
+#: smarter-archives.php:68
+msgid "Nov"
+msgstr ""
+
+#: smarter-archives.php:68
+msgid "Dec"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Smarter Archives"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/smarter-archives/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Unique way to access archives via months, broken down by year. Originally "
+"based on <a href=\"http://justinblanton.com/projects/smartarchives/\">code "
+"by Justin Blanton</a>."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Robin A."
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://robinadr.com/"
+msgstr ""
