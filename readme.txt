@@ -1,7 +1,7 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 3.5.1
+Tested up to: 3.7.1
 Stable tag: 2.5
 
 Gives a unique way of navigating the yearly and monthly archives of your blog. 
@@ -15,7 +15,7 @@ in that year during which you posted has a link. It is also built to be easy to 
 is semantic and has a CSS class.
 
 The plugin's output is completely customizable (both HTML tags and CSS classes) and support for 
-translations is built-in (domain is `smarter-archives`).
+translations is built-in (domain is `smarter-archives`, and a POT file is included).
 
 The idea and code was based on the [original Smart Archives plugin](http://justinblanton.com/projects/smartarchives/) 
 by [Justin Blanton](http://justinblanton.com/).
@@ -23,9 +23,9 @@ by [Justin Blanton](http://justinblanton.com/).
 == Installation ==
 
 1. Download and unzip the archive file.
-2. Upload the `smarter-archives.php` file to `wp-content/plugins/`.
+2. Upload the `smarter-archives` folder to `wp-content/plugins/`.
 3. Activate *Smarter Archives* in the WordPress admin plugins screen.
-4. Put the template tag (`<?php smarter_archives(); ?>`) either:
+4. Put the template tag (`<?php wp_smarter_archives(); ?>`) either:
 	* In the template `.php` file.
 	* If you have a plugin that lets you run PHP code from within the posts/pages, you can put it in the page's content, right in the admin panel.
 5. Enjoy.
@@ -36,10 +36,16 @@ by [Justin Blanton](http://justinblanton.com/).
 
 **Or: I just see `<?php wp_smart_archives(); ?>`!**
 
-You need a plugin that enables you to put PHP code directly in your posts. 
-Alternatively, you can create a template page for your archives page.
+You need a plugin that enables you to put PHP code directly in your posts (less secure). 
+Alternatively, you can [create a PHP template page for your archives page](http://codex.wordpress.org/Page_Templates#Custom_Page_Template) (more secure).
 
 == Changelog ==
+
+= 2.5.1 =
+
+* Standardized i18n calls
+* Added a POT file for translating
+* Added a lang folder
 
 = 2.5 =
 
@@ -75,3 +81,5 @@ Alternatively, you can create a template page for your archives page.
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+A full version of the license is included with the plugin in `license.txt`.
