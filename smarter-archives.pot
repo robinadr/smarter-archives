@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Smarter Archives package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Smarter Archives 2.5.1\n"
+"Project-Id-Version: Smarter Archives 2.6\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/smarter-archives\n"
 "POT-Creation-Date: 2013-11-23 00:26:53+00:00\n"
 "MIME-Version: 1.0\n"
