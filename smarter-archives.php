@@ -2,31 +2,32 @@
 /*
 Plugin Name: Smarter Archives
 Plugin URI: http://wordpress.org/extend/plugins/smarter-archives/
-Author: Robin A.
+Author: Robin Adrianse
 Author URI: http://robinadr.com/
 Description: Unique way to access archives via months, broken down by year. Originally based on <a href="http://justinblanton.com/projects/smartarchives/">code by Justin Blanton</a>.
-Version: 2.5.1
+Version: 2.6
 Text Domain: smarter-archives
 	
 	Smarter Archives plugin for WordPress
-	Copyright (C) 2013 Robin A.
-
+	Copyright (C) 2013 Robin Adrianse
+	
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
 	as published by the Free Software Foundation; either version 2
 	of the License, or (at your option) any later version.
-
+	
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 	GNU General Public License for more details.
-
+	
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 */
 
+// See readme.txt for a list of arguments this function/shortcode takes
 function smarter_archives( $args = '' )
 {
 	$defaults = apply_filters('smarter_archives_defaults', array(
@@ -56,7 +57,7 @@ function smarter_archives( $args = '' )
 	if ( $order != 'DESC' && $order != 'ASC' )
 		$order = 'DESC';
 	
-	$years = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) AS `year`, COUNT(ID) as `count` FROM $wpdb->posts $sql_join $sql_where GROUP BY year(post_date) ORDER BY post_date DESC");
+	$years = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) AS `year`, COUNT(ID) as `count` FROM $wpdb->posts $sql_join $sql_where GROUP BY year(post_date) ORDER BY post_date $order");
 	
 	if ( empty($years) )
 		return;
@@ -111,9 +112,12 @@ function smarter_archives( $args = '' )
 		return $output;
 }
 
-function wp_smart_archives( $args = '' )
+if ( !function_exists( 'wp_smart_archives' ) )
 {
-	return smarter_archives($args);
+	function wp_smart_archives( $args = '' )
+	{
+		return smarter_archives($args);
+	}
 }
 
 function smarter_archives_init()
@@ -121,3 +125,10 @@ function smarter_archives_init()
 	load_plugin_textdomain('smarter-archives', false, basename(dirname(__FILE__)) . '/lang/');
 }
 add_action('plugins_loaded', 'smarter_archives_init');
+
+function smarter_archives_shortcode( $args = array() )
+{
+	$args['output'] = false;
+	return smarter_archives($args);
+}
+add_shortcode( 'smarter-archives', 'smarter_archives_shortcode' );

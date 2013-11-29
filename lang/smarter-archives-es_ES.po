@@ -8,65 +8,66 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2013-11-29 11:14-0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: smarter-archives.php:65
 msgid "Jan"
-msgstr ""
+msgstr "Ene"
 
 #: smarter-archives.php:65
 msgid "Feb"
-msgstr ""
+msgstr "Feb"
 
 #: smarter-archives.php:65
 msgid "Mar"
-msgstr ""
+msgstr "Mar"
 
 #: smarter-archives.php:66
 msgid "Apr"
-msgstr ""
+msgstr "Abr"
 
 #: smarter-archives.php:66
 msgid "May"
-msgstr ""
+msgstr "May"
 
 #: smarter-archives.php:66
 msgid "Jun"
-msgstr ""
+msgstr "Jun"
 
 #: smarter-archives.php:67
 msgid "Jul"
-msgstr ""
+msgstr "Jul"
 
 #: smarter-archives.php:67
 msgid "Aug"
-msgstr ""
+msgstr "Ago"
 
 #: smarter-archives.php:67
 msgid "Sep"
-msgstr ""
+msgstr "Sep"
 
 #: smarter-archives.php:68
 msgid "Oct"
-msgstr ""
+msgstr "Oct"
 
 #: smarter-archives.php:68
 msgid "Nov"
-msgstr ""
+msgstr "Nov"
 
 #: smarter-archives.php:68
 msgid "Dec"
-msgstr ""
+msgstr "Dic"
 
 #. Plugin Name of the plugin/theme
 msgid "Smarter Archives"
-msgstr ""
+msgstr "Archivos Inteligentes"
 
 #. Plugin URI of the plugin/theme
 msgid "http://wordpress.org/extend/plugins/smarter-archives/"
-msgstr ""
+msgstr "http://wordpress.org/extend/plugins/smarter-archives/"
 
 #. Description of the plugin/theme
 msgid ""
@@ -74,11 +75,14 @@ msgid ""
 "based on <a href=\"http://justinblanton.com/projects/smartarchives/\">code "
 "by Justin Blanton</a>."
 msgstr ""
+"Forma única  de acceder archivos por meses, hasta separados por años. Basado "
+"originalmente en  <a href=\"http://justinblanton.com/projects/smartarchives/"
+"\"> el código por Justin Blanton</a>."
 
 #. Author of the plugin/theme
 msgid "Robin Adrianse"
-msgstr ""
+msgstr "Robin Adrianse"
 
 #. Author URI of the plugin/theme
 msgid "http://robinadr.com/"
-msgstr ""
+msgstr "http://robinadr.com/"
