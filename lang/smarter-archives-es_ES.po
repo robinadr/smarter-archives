@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2013-11-29 12:49-0800\n"
+"PO-Revision-Date: 2013-11-29 13:10-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "X-Generator: Poedit 1.5.7\n"
@@ -66,18 +66,18 @@ msgid "Smarter Archives"
 msgstr "Archivos Inteligentes"
 
 #. Plugin URI of the plugin/theme
-msgid "http://wordpress.org/extend/plugins/smarter-archives/"
-msgstr "http://wordpress.org/extend/plugins/smarter-archives/"
+msgid "http://wordpress.org/plugins/smarter-archives/"
+msgstr "http://wordpress.org/plugins/smarter-archives/"
 
 #. Description of the plugin/theme
 msgid ""
 "Unique way to access archives via months, broken down by year. Originally "
-"based on <a href=\"http://justinblanton.com/projects/smartarchives/\">code "
-"by Justin Blanton</a>."
+"based on <a href=\"http://hypertext.net/projects/smartarchives/\">code by "
+"Justin Blanton</a>."
 msgstr ""
 "Forma única  de acceder archivos por meses, hasta separados por años. Basado "
-"originalmente en  <a href=\"http://justinblanton.com/projects/smartarchives/"
-"\"> el código por Justin Blanton</a>."
+"originalmente en  <a href=\"http://hypertext.net/projects/smartarchives/\"> "
+"el código por Justin Blanton</a>."
 
 #. Author of the plugin/theme
 msgid "Robin Adrianse"

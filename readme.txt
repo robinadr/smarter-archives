@@ -16,8 +16,8 @@ The month names are [internationalized with the WordPress translation API](http:
 
 * Spanish (es_ES)
 
-<small>The idea and code was based on the [original Smart Archives plugin](http://justinblanton.com/projects/smartarchives/) 
-by [Justin Blanton](http://justinblanton.com/).</small>
+<small>The idea and code for this plugin came from the [original Smart Archives plugin](http://hypertext.net/projects/smartarchives/) 
+by Justin Blanton.</small>
 
 == Screenshots ==
 
