@@ -4,7 +4,7 @@ Tags: archives, archive
 Tested up to: 3.7.1
 Stable tag: 2.6
 
-Gives a unique way of navigating the yearly and monthly archives of your blog. Output is customizable, there are filter hooks in the code, and it is fully translatable.
+Gives a unique way of navigating the yearly and monthly archives of your blog.
 
 == Description ==
 
