@@ -128,7 +128,7 @@ add_action('plugins_loaded', 'smarter_archives_init');
 
 function smarter_archives_shortcode( $args = array() )
 {
-	$args['output'] = false;
+	$args['mode'] = 'return';
 	return smarter_archives($args);
 }
 add_shortcode( 'smarter-archives', 'smarter_archives_shortcode' );
