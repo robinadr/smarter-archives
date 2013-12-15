@@ -1,14 +1,14 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 3.7.1
-Stable tag: 2.6
+Tested up to: 3.8
+Stable tag: 3.0
 
-Gives a unique way of navigating the yearly and monthly archives of your blog.
+Easily navigate the yearly and monthly archives of your blog.
 
 == Description ==
 
-When you use the `[smarter-archives]` shortcode anywhere on a page or in a post, it gets replaced by a listing of every year since you started posting, and each year has links to every month within that year. However, the plugin is smart enough to know if you didn't create any content in any given month, and doesn't make a link for that month. See the **Screenshots** section for an example of it in action.
+When you use the `[smarter-archives]` shortcode anywhere in a post or a page, it gets replaced by a listing of every year since you started posting, with a list of links to each month for that year. However, the plugin is smart enough to know if you didn't create any content in any given month, and doesn't make a link for that month. See the **Screenshots** section for an example of it in action.
 
 See the **Usage** section for a complete list of the arguments the shortcode takes, and how you can use them to customize your archives listing.
 
@@ -16,8 +16,7 @@ The month names are [internationalized with the WordPress translation API](http:
 
 * Spanish (es_ES)
 
-<small>The idea and code for this plugin came from the [original Smart Archives plugin](http://hypertext.net/projects/smartarchives/) 
-by Justin Blanton.</small>
+The original concept for this plugin comes from the [Smart Archives](http://hypertext.net/projects/smartarchives/) plugin by Justin Blanton.
 
 == Screenshots ==
 
@@ -40,6 +39,7 @@ The `[smarter-archives]` shortcode takes these arguments (default values include
 * `wrapper_tag` (default: `div`) -- tag wrapped around the listing
 * `year_link_class` (default: `year-link`) -- class given to each year links
 * `year_tag` (default: `p`) -- tag around each year group
+* `year_class` (default: none) -- class for the tag around each year group
 * `after_year` (default: `: `) -- value after the year and before the list of months
 * `month_link_class` (default: `month-link`) -- class given to each month link
 * `month_tag` (default: `span`) -- tag around each month
@@ -52,6 +52,14 @@ The `[smarter-archives]` shortcode takes these arguments (default values include
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.0 =
+
+* Backend is **completely rewritten: only 1 query compared to 12 for every year before** (!!)
+* Optimizations everywhere
+* New option: `year_class` (see Usage for more info)
+* Updated compatibility to WP 3.8
+* Updated es_ES translation to include new strings
 
 = 2.6 =
 
