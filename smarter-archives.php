@@ -95,7 +95,11 @@ function smarter_archives( $args = '' )
 		foreach ( $month_names as $month_number => $month_name ) {
 			if ( isset( $months[$month_number] ) ) {
 				$output .= "<$month_tag>";
-				$output .= '<' . _smarter_archives_tag( 'a', $month_link_class ) . ' href="' . get_month_link( $year, $month_number ) . '">';
+				$output .= '<' . _smarter_archives_tag( 'a', $month_link_class ) . ' href="';
+				$output .= get_month_link( $year, $month_number );
+				$output .= '" title="';
+				$output .= sprintf( _n( '% post', '% posts', $months[$month_number], 'smarter-archives' ) );
+				$output .= '"'. '">';
 				$output .= $month_name;
 				$output .= "</a></$month_tag>";
 			} else {
