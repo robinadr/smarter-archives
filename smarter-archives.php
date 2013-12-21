@@ -28,14 +28,13 @@ function get_smarter_archives()
 	
 	$archives = array();
 	
-	if ( empty( $results ) )
-		return $archives;
-	
-	foreach ( $results as $result ) {
-		if ( !isset( $archives[$result->year] ) )
-			$archives[$result->year] = array();
+	if ( !empty( $results ) ) {
+		foreach ( $results as $result ) {
+			if ( !isset( $archives[$result->year] ) )
+				$archives[$result->year] = array();
 		
-		$archives[$result->year][$result->month] = $result->count;
+			$archives[$result->year][$result->month] = $result->count;
+		}
 	}
 	
 	return $archives;
@@ -64,15 +63,12 @@ function smarter_archives( $args = '' )
 	if ( $mode != 'output' && $mode != 'return' )
 		$mode = 'output';
 	
-	$order = strtoupper( $order );
-	if ( $order != 'DESC' && $order != 'ASC' )
-		$order = 'DESC';
-	
 	$archives = get_smarter_archives();
 	
 	if ( empty( $archives ) )
 		return '';
 	
+	$order = strtoupper( $order );
 	if ( $order == 'ASC' )
 		ksort( $archives );
 	
@@ -135,7 +131,7 @@ if ( !function_exists( 'wp_smart_archives' ) ) :
 	
 	function wp_smart_archives( $args = '' )
 	{
-		return smarter_archives($args);
+		return smarter_archives( $args );
 	}
 	
 endif;
