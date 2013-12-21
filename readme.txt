@@ -47,6 +47,10 @@ The `[smarter-archives]` shortcode takes these arguments (default values include
 * `empty_month_class` (default: `empty-month`) -- class applied to empty months (can use this to gray them out)
 * `order` (default: `DESC`) -- order the years are shown in (`ASC` for ascending, `DESC` for descending)
 
+**Advanced Usage**
+
+There is a function, `get_smarter_archives()`, that returns the raw array with the years, months, and post counts. You can use this for ultimate customization.
+
 **Example Usage**
 
 	[smarter-archives order="DESC" after_month="&bull;"]
