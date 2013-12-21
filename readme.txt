@@ -1,45 +1,74 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 3.5.1
-Stable tag: 2.5
+Tested up to: 3.9
+Stable tag: 3.0
 
-Gives a unique way of navigating the yearly and monthly archives of your blog. 
-Customizable in its output, and ready for translation.
+Easily navigate the yearly and monthly archives of your blog.
 
 == Description ==
 
-This plugin provides you with a template tag for your archives page, which presents navigating 
-the archives in a unique way. It has a row for each year during which you posted, and every month 
-in that year during which you posted has a link. It is also built to be easy to style with CSS, and everything 
-is semantic and has a CSS class.
+When you use the `[smarter-archives]` shortcode anywhere in a post or a page, it gets replaced by a listing of every year since you started posting, with a list of links to each month for that year. However, the plugin is smart enough to know if you didn't create any content in any given month, and doesn't make a link for that month. See the **Screenshots** section for an example of it in action.
 
-The plugin's output is completely customizable (both HTML tags and CSS classes) and support for 
-translations is built-in (domain is `smarter-archives`).
+See the **Usage** section for a complete list of the arguments the shortcode takes, and how you can use them to customize your archives listing.
 
-The idea and code was based on the [original Smart Archives plugin](http://justinblanton.com/projects/smartarchives/) 
-by [Justin Blanton](http://justinblanton.com/).
+The month names are [internationalized with the WordPress translation API](http://codex.wordpress.org/I18n_for_WordPress_Developers). A POT file is included, and if you want to translate please feel free to do so and [contact me](http://robinadr.com/contact) so I can include it with the plugin (with credit to you, of course). Here are the translations that have been done so far:
+
+* Spanish (es_ES)
+
+The original concept for this plugin comes from the [Smart Archives](http://hypertext.net/projects/smartarchives/) plugin by Justin Blanton.
+
+== Screenshots ==
+
+1. An example of the plugin in action [on my website](http://robinadr.com/archives).
 
 == Installation ==
 
-1. Download and unzip the archive file.
-2. Upload the `smarter-archives.php` file to `wp-content/plugins/`.
-3. Activate *Smarter Archives* in the WordPress admin plugins screen.
-4. Put the template tag (`<?php smarter_archives(); ?>`) either:
-	* In the template `.php` file.
-	* If you have a plugin that lets you run PHP code from within the posts/pages, you can put it in the page's content, right in the admin panel.
+1. Download the ZIP file and unzip it
+2. Copy or upload the `smarter-archives` folder to your plugins folder (usually `wp-content/plugins/`)
+3. Activate *Smarter Archives* in the admin
+4. Put the `[smarter-archives]` shortcode where you want the listing to show
 5. Enjoy.
 
-== Frequently Asked Questions ==
+== Usage ==
 
-= It doesn't parse the PHP! =
+The `[smarter-archives]` shortcode takes these arguments (default values included):
 
-**Or: I just see `<?php wp_smart_archives(); ?>`!**
+* `mode` (default: `output`) -- if it's set to `output`, the plugin prints the listing. Set it to `false` to return the value
+* `wrapper_class` (default: `smart-archives`) -- class given to the tag wrapped around the listing (`<div>` by default)
+* `wrapper_tag` (default: `div`) -- tag wrapped around the listing
+* `year_link_class` (default: `year-link`) -- class given to each year links
+* `year_tag` (default: `p`) -- tag around each year group
+* `year_class` (default: none) -- class for the tag around each year group
+* `after_year` (default: `: `) -- value after the year and before the list of months
+* `month_link_class` (default: `month-link`) -- class given to each month link
+* `month_tag` (default: `span`) -- tag around each month
+* `after_month` (default: `&nbsp;`) -- spacer between months
+* `empty_month_class` (default: `empty-month`) -- class applied to empty months (can use this to gray them out)
+* `order` (default: `DESC`) -- order the years are shown in (`ASC` for ascending, `DESC` for descending)
 
-You need a plugin that enables you to put PHP code directly in your posts. 
-Alternatively, you can create a template page for your archives page.
+**Example Usage**
+
+	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.0 =
+
+* Backend is **completely rewritten: only 1 query compared to 12 for every year before** (!!)
+* Optimizations everywhere
+* New option: `year_class` (see Usage for more info)
+* Updated compatibility to WP 3.8
+* Updated es_ES translation to include new strings
+
+= 2.6 =
+
+* Standardized i18n calls -- **fully translatable**
+* Added a POT file for translating
+* Added a lang folder
+* **Spanish (es_ES) translation added** -- thanks to Andrew Kurtis of [WebHostingHub](http://www.webhostinghub.com/)
+* **New shortcode**: `[smarter-archives]`, see Usage for more details
+* Fixed bug: `order` now actually does something
 
 = 2.5 =
 
@@ -75,3 +104,5 @@ Alternatively, you can create a template page for your archives page.
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+A full version of the license is included with the plugin in `license.txt`.

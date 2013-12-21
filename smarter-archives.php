@@ -1,127 +1,150 @@
 <?php
-/*
-Plugin Name: Smarter Archives
-Plugin URI: http://wordpress.org/extend/plugins/smarter-archives/
-Author: Robin A.
-Author URI: http://robinadr.com/
-Description: Unique way to access archives via months, broken down by year. Originally based on <a href="http://justinblanton.com/projects/smartarchives/">code by Justin Blanton</a>.
-Version: 2.5
+/***
+
+	Plugin Name: Smarter Archives
+	Plugin URI: http://wordpress.org/plugins/smarter-archives/
 	
-	Smarter Archives plugin for WordPress
-	Copyright (C) 2013 Robin A.
+	Author: Robin Adrianse
+	Author URI: http://robinadr.com/
+	
+	Description: Easy, simple, and intuitive way to access archives via months, broken down by year.
+	Version: 3.0
+	Text Domain: smarter-archives
+	
+	Copyright (c) 2013 Robin Adrianse; see license.txt for full license
 
-	This program is free software; you can redistribute it and/or
-	modify it under the terms of the GNU General Public License
-	as published by the Free Software Foundation; either version 2
-	of the License, or (at your option) any later version.
+***/
 
-	This program is distributed in the hope that it will be useful,
-	but WITHOUT ANY WARRANTY; without even the implied warranty of
-	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
-
-	You should have received a copy of the GNU General Public License
-	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
-*/
-
-function __sa( $x )
+function get_smarter_archives()
 {
-	if ( is_array($x) ) {
-		foreach ( $x as $k => $v )
-			$x[$k] = __($v, 'smarter-archives');
-		return $x;
-	} else
-		return __($x, 'smarter-archives');
+	global $wpdb;
+	
+	$sql_where = apply_filters( 'smart_archives_where', "WHERE post_type = 'post' AND post_status = 'publish'" );
+	$sql_join = apply_filters( 'smart_archives_join', '' );
+	
+	$sql = "SELECT DISTINCT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, COUNT(ID) AS `count` FROM $wpdb->posts $sql_join $sql_where GROUP BY MONTH(post_date), YEAR(post_date) ORDER BY `year` DESC, `month` ASC";
+	
+	$results = $wpdb->get_results( $sql );
+	
+	$archives = array();
+	
+	if ( !empty( $results ) ) {
+		foreach ( $results as $result ) {
+			if ( !isset( $archives[$result->year] ) )
+				$archives[$result->year] = array();
+		
+			$archives[$result->year][$result->month] = $result->count;
+		}
+	}
+	
+	return $archives;
 }
 
 function smarter_archives( $args = '' )
 {
-	$defaults = apply_filters('smarter_archives_defaults', array(
-		'mode' => 'output', 'wrapper_class' => 'smart-archives', 
-		'wrapper_tag' => 'div', 'year_link_class' => 'year-link', 
-		'year_tag' => 'p', 'after_year' => ': ', 
-		'month_link_class' => 'month-link', 'month_tag' => 'span', 
-		'after_month' => '&nbsp;', 'empty_month_class' => 'empty-month', 
+	$defaults = array(
+		'mode' => 'output', 
+		'wrapper_class' => 'smart-archives', 
+		'wrapper_tag' => 'div', 
+		'year_link_class' => 'year-link', 
+		'year_tag' => 'p', 
+		'year_class' => '', 
+		'after_year' => ': ', 
+		'month_link_class' => 'month-link', 
+		'month_tag' => 'span', 
+		'after_month' => '&nbsp;', 
+		'empty_month_class' => 'empty-month', 
 		'order' => 'DESC'
-	));
+	);
+	$defaults = apply_filters( 'smarter_archives_defaults', $defaults );
 	
-	extract(wp_parse_args($args, $defaults), EXTR_SKIP);
+	extract( wp_parse_args( $args, $defaults ), EXTR_SKIP );
 	
-	global $wpdb;
-	
-	$sql_where = apply_filters('smart_archives_where', "WHERE post_type = 'post' AND post_status = 'publish'");
-	$sql_join = apply_filters('smart_archives_join', '');
-	
-	// If it's an unrecognizable $mode, default to output
 	if ( $mode != 'output' && $mode != 'return' )
 		$mode = 'output';
 	
-	// Make the $order uppercase so it's easier to deal with
-	$order = strtoupper($order);
+	$archives = get_smarter_archives();
 	
-	// If it's an unrecognizable $order, default to DESC so there are no SQL errors
-	if ( $order != 'DESC' && $order != 'ASC' )
-		$order = 'DESC';
+	if ( empty( $archives ) )
+		return '';
 	
-	$years = $wpdb->get_results("SELECT DISTINCT YEAR(post_date) AS `year`, COUNT(ID) as `count` FROM $wpdb->posts $sql_join $sql_where GROUP BY year(post_date) ORDER BY post_date DESC");
+	$order = strtoupper( $order );
+	if ( $order == 'ASC' )
+		ksort( $archives );
 	
-	if ( empty($years) )
-		return;
+	$month_names = array( '', 
+		__( 'Jan', 'smarter-archives' ), __( 'Feb', 'smarter-archives' ), __( 'Mar', 'smarter-archives' ), 
+		__( 'Apr', 'smarter-archives' ), __( 'May', 'smarter-archives' ), __( 'Jun', 'smarter-archives' ), 
+		__( 'Jul', 'smarter-archives' ), __( 'Aug', 'smarter-archives' ), __( 'Sep', 'smarter-archives' ), 
+		__( 'Oct', 'smarter-archives' ), __( 'Nov', 'smarter-archives' ), __( 'Dec', 'smarter-archives' )
+	);
+	$month_names = apply_filters( 'smarter_archives_months', $month_names );
 	
-	$sm = __sa(apply_filters('smarter_archives_months', array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')));
+	$output = '<' . _smarter_archives_tag( $wrapper_tag, $wrapper_class ) . ">\n";
 	
-	$output = '';
-	
-	if ( !empty($wrapper_class) )
-		$output .= sprintf('<%s class="%s">', $wrapper_tag, $wrapper_class);
-	else
-		$output .= sprintf('<%s>', $wrapper_tag);
-	
-	if ( !empty($year_link_class) )
-		$year_link_class = ' class="' . $year_link_class . '"';
-	
-	if ( !empty($empty_month_class) )
-		$empty_month_class = ' class="' . $empty_month_class . '"';
-	
-	foreach ( $years as $year ) {
-		$year = $year->year;
+	foreach ( $archives as $year => $months ) {
+		$output .= '<' . _smarter_archives_tag( $year_tag, $year_class ) . '>';
+		$output .= '<' . _smarter_archives_tag( 'a', $year_link_class ) . ' href="' . get_year_link( $year ) . '">';
+		$output .= $year;
+		$output .= "</a>$after_year";
 		
-		$output .= sprintf('<%s><a%s href="%s">%s</a>%s', $year_tag, $year_link_class, get_year_link($year), $year, $after_year);
-		
-		foreach ( $sm as $i => $month ) {
-			$mi = $i + 1;
+		foreach ( $month_names as $month_number => $month_name ) {
+			if ( isset( $months[$month_number] ) ) {
+				$output .= "<$month_tag>";
+				$output .= '<' . _smarter_archives_tag( 'a', $month_link_class ) . ' href="';
+				$output .= get_month_link( $year, $month_number );
+				$output .= '" title="';
+				$output .= sprintf( _n( '1 post', '%d posts', $months[$month_number], 'smarter-archives' ), $months[$month_number] );
+				$output .= '"'. '">';
+				$output .= $month_name;
+				$output .= "</a></$month_tag>";
+			} else {
+				$output .= '<' . _smarter_archives_tag( $month_tag, $empty_month_class ) . '>';
+				$output .= $month_name;
+				$output .= "</$month_tag>";
+			}
 			
-			if ( (int) $wpdb->get_var("SELECT COUNT(ID) FROM $wpdb->posts $sql_join $sql_where AND YEAR(post_date) = '$year' AND month(post_date) = '$mi'") > 0 )
-				$output .= sprintf('<%s><a href="%s" title="%s">%s</a></%s>', $month_tag, get_month_link($year, $mi), $month, $month, $month_tag);
-			else
-				$output .= sprintf('<%s%s>%s</%s>', $month_tag, $empty_month_class, $month, $month_tag);
-			
-			if ( $mi < 12 )
+			if ( $month_number < 12 )
 				$output .= $after_month;
 		}
 		
-		$output .= sprintf('</%s>', $year_tag);
+		$output .= "</$year_tag>\n";
 	}
 	
-	$output .= sprintf('</%s>', $wrapper_tag);
+	$output .= "</$wrapper_tag>\n";
 	
 	if ( $mode == 'output' )
-		echo $output;
+		print $output;
 	else
 		return $output;
 }
 
-function wp_smart_archives( $args = '' )
+function _smarter_archives_tag( $tag, $class = '' )
 {
-	return smarter_archives($args);
+	if ( !empty( $class ) )
+		return "$tag class=\"$class\"";
+	else
+		return "$tag";
 }
 
-function smarter_archives_init()
-{
-	load_plugin_textdomain('smarter-archives', false, basename(dirname(__FILE__)));
-}
-add_action('plugins_loaded', 'smarter_archives_init');
+if ( !function_exists( 'wp_smart_archives' ) ) :
+	
+	function wp_smart_archives( $args = '' )
+	{
+		return smarter_archives( $args );
+	}
+	
+endif;
 
-?>
+function _smarter_archives_init()
+{
+	load_plugin_textdomain( 'smarter-archives', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+}
+add_action( 'plugins_loaded', '_smarter_archives_init' );
+
+function _smarter_archives_shortcode( $args = array() )
+{
+	$args['mode'] = 'return';
+	return smarter_archives( $args );
+}
+add_shortcode( 'smarter-archives', '_smarter_archives_shortcode' );
