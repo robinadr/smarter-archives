@@ -57,7 +57,7 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 
 == Changelog ==
 
-= 3.0.1 =
+= 3.1 =
 
 * Only load textdomain if WPLANG is defined AND not empty
 
