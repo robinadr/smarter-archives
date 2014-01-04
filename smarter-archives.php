@@ -8,7 +8,7 @@
 	Author URI: http://robinadr.com/
 	
 	Description: Easy, simple, and intuitive way to access archives via months, broken down by year.
-	Version: 3.0
+	Version: 3.1
 	Text Domain: smarter-archives
 	
 	Copyright (c) 2013 Robin Adrianse; see license.txt for full license
