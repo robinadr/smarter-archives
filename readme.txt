@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 3.9
-Stable tag: 3.0
+Stable tag: 3.0.1
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -56,6 +56,10 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.0.1 =
+
+* Only load textdomain if WPLANG is defined AND not empty
 
 = 3.0 =
 

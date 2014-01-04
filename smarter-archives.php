@@ -128,19 +128,19 @@ function _smarter_archives_tag( $tag, $class = '' )
 }
 
 if ( !function_exists( 'wp_smart_archives' ) ) :
-	
 	function wp_smart_archives( $args = '' )
 	{
 		return smarter_archives( $args );
 	}
-	
 endif;
 
-function _smarter_archives_init()
-{
-	load_plugin_textdomain( 'smarter-archives', false, basename( dirname( __FILE__ ) ) . '/lang/' );
-}
-add_action( 'plugins_loaded', '_smarter_archives_init' );
+if ( defined( 'WPLANG' ) && constant( 'WPLANG' ) != '' ) :
+	function _smarter_archives_textdomain()
+	{
+		load_plugin_textdomain( 'smarter-archives', false, basename( dirname( __FILE__ ) ) . '/lang/' );
+	}
+	add_action( 'plugins_loaded', '_smarter_archives_textdomain' );
+endif;
 
 function _smarter_archives_shortcode( $args = array() )
 {
