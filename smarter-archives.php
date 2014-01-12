@@ -1,6 +1,5 @@
 <?php
-/***
-
+/***************************************************************************************************
 	Plugin Name: Smarter Archives
 	Plugin URI: http://wordpress.org/plugins/smarter-archives/
 	
@@ -8,12 +7,11 @@
 	Author URI: http://robinadr.com/
 	
 	Description: Easy, simple, and intuitive way to access archives via months, broken down by year.
-	Version: 3.1
+	Version: 3.1.1
 	Text Domain: smarter-archives
 	
 	Copyright (c) 2013 Robin Adrianse; see license.txt for full license
-
-***/
+***************************************************************************************************/
 
 function get_smarter_archives()
 {
@@ -22,7 +20,10 @@ function get_smarter_archives()
 	$sql_where = apply_filters( 'smart_archives_where', "WHERE post_type = 'post' AND post_status = 'publish'" );
 	$sql_join = apply_filters( 'smart_archives_join', '' );
 	
-	$sql = "SELECT DISTINCT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, COUNT(ID) AS `count` FROM $wpdb->posts $sql_join $sql_where GROUP BY MONTH(post_date), YEAR(post_date) ORDER BY `year` DESC, `month` ASC";
+	$sql = 'SELECT DISTINCT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, COUNT(ID) AS `count` ' . 
+		"FROM $wpdb->posts $sql_join $sql_where " . 
+		'GROUP BY MONTH(post_date), YEAR(post_date) ' . 
+		'ORDER BY `year` DESC, `month` ASC';
 	
 	$results = $wpdb->get_results( $sql );
 	
