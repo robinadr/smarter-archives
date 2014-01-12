@@ -1,0 +1,105 @@
+# Copyright (C) 2013 Smarter Archives
+# This file is distributed under the same license as the Smarter Archives package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Smarter Archives 3.1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/smarter-archives\n"
+"POT-Creation-Date: 2013-12-15 07:16:44+00:00\n"
+"PO-Revision-Date: 2014-01-11 19:10-0800\n"
+"Last-Translator: Robin Adrianse <robinadr@gmail.com>\n"
+"Language-Team: AstronautiNews.it <info@isaa.it>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: smarter-archives.php:80
+msgid "Jan"
+msgstr "Gen"
+
+#: smarter-archives.php:80
+msgid "Feb"
+msgstr "Feb"
+
+#: smarter-archives.php:80
+msgid "Mar"
+msgstr "Mar"
+
+#: smarter-archives.php:81
+msgid "Apr"
+msgstr "Apr"
+
+#: smarter-archives.php:81
+msgid "May"
+msgstr "Mag"
+
+#: smarter-archives.php:81
+msgid "Jun"
+msgstr "Giu"
+
+#: smarter-archives.php:82
+msgid "Jul"
+msgstr "Lug"
+
+#: smarter-archives.php:82
+msgid "Aug"
+msgstr "Ago"
+
+#: smarter-archives.php:82
+msgid "Sep"
+msgstr "Set"
+
+#: smarter-archives.php:83
+msgid "Oct"
+msgstr "Ott"
+
+#: smarter-archives.php:83
+msgid "Nov"
+msgstr "Nov"
+
+#: smarter-archives.php:83
+msgid "Dec"
+msgstr "Dic"
+
+#: smarter-archives.php:101
+msgid "1 post"
+msgid_plural "%d posts"
+msgstr[0] "1 articolo"
+msgstr[1] "%d articoli"
+
+#. Plugin Name of the plugin/theme
+msgid "Smarter Archives"
+msgstr "Smarter Archives"
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/plugins/smarter-archives/"
+msgstr "http://wordpress.org/plugins/smarter-archives/"
+
+#. Description of the plugin/theme
+msgid ""
+"Easy, simple, and intuitive way to access archives via months, broken down "
+"by year."
+msgstr ""
+"Un modo semplice e intuitivo di consultare l'archivio degli articoli "
+"ordinati per mese e anno."
+
+#. Author of the plugin/theme
+#, fuzzy
+msgid "Robin Adrianse"
+msgstr "Robin Adrianse"
+
+#. Author URI of the plugin/theme
+msgid "http://robinadr.com/"
+msgstr "http://robinadr.com/"
+
+#~ msgid ""
+#~ "Unique way to access archives via months, broken down by year. Originally "
+#~ "based on <a href=\"http://hypertext.net/projects/smartarchives/\">code by "
+#~ "Justin Blanton</a>."
+#~ msgstr ""
+#~ "Forma única  de acceder archivos por meses, hasta separados por años. "
+#~ "Basado originalmente en  <a href=\"http://hypertext.net/projects/"
+#~ "smartarchives/\"> el código por Justin Blanton</a>."
