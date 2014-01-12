@@ -14,6 +14,7 @@ See the **Usage** section for a complete list of the arguments the shortcode tak
 
 The month names are [internationalized with the WordPress translation API](http://codex.wordpress.org/I18n_for_WordPress_Developers). A POT file is included, and if you want to translate please feel free to do so and [contact me](http://robinadr.com/contact) so I can include it with the plugin (with credit to you, of course). Here are the translations that have been done so far:
 
+* Italian (it_IT)
 * Spanish (es_ES)
 
 The original concept for this plugin comes from the [Smart Archives](http://hypertext.net/projects/smartarchives/) plugin by Justin Blanton.
@@ -57,6 +58,12 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 
 == Changelog ==
 
+= 3.1.1 =
+
+This update is **optional** for everyone, unless you want the new Italian translation. If not, feel free to skip it.
+
+* New translation: Italian (it_IT) courtesy of [Marco Zambianchi](http://www.astronautinews.it/)
+
 = 3.1 =
 
 * Only load textdomain if WPLANG is defined AND not empty
@@ -74,7 +81,7 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 * Standardized i18n calls -- **fully translatable**
 * Added a POT file for translating
 * Added a lang folder
-* **Spanish (es_ES) translation added** -- thanks to Andrew Kurtis of [WebHostingHub](http://www.webhostinghub.com/)
+* **Spanish (es_ES) translation added** -- thanks to [Andrew Kurtis of WebHostingHub](http://www.webhostinghub.com/)
 * **New shortcode**: `[smarter-archives]`, see Usage for more details
 * Fixed bug: `order` now actually does something
 
