@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 3.9
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -12,8 +12,9 @@ When you use the `[smarter-archives]` shortcode anywhere in a post or a page, it
 
 See the **Usage** section for a complete list of the arguments the shortcode takes, and how you can use them to customize your archives listing.
 
-The month names are [internationalized with the WordPress translation API](http://codex.wordpress.org/I18n_for_WordPress_Developers). A POT file is included, and if you want to translate please feel free to do so and [contact me](http://robinadr.com/contact) so I can include it with the plugin (with credit to you, of course). Here are the translations that have been done so far:
+The month names are [internationalized with the WordPress translation API](http://codex.wordpress.org/I18n_for_WordPress_Developers). A POT file is included, and if you want to translate please feel free to do so and [submit a new pull request](https://github.com/robinadr/smarter-archives/pulls) on GitHub. If you do not know how to use GitHub, you can also [contact me directly](http://robinadr.com/contact). Here are the translations that have been done so far:
 
+* French (fr_FR)
 * Italian (it_IT)
 * Spanish (es_ES)
 
@@ -57,6 +58,14 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.1.2 =
+
+* Added French (fr_FR) translation, thanks to [Jean-Hugues Roy](http://jhroy.ca/)
+
+This update is **optional**, the only change is the new French translation.
+
+Also, note that development is now on [GitHub](https://github.com/robinadr/smarter-archives). Releases will continue to be pushed through the WP plugin repository, however.
 
 = 3.1.1 =
 
