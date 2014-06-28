@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 3.9
-Stable tag: 3.1.2
+Stable tag: 3.1.3
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -58,6 +58,10 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.1.3 =
+
+* [Fixed bug](https://github.com/robinadr/smarter-archives/issues/1) relating to an extra quote in month links
 
 = 3.1.2 =
 
