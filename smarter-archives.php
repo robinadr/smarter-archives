@@ -96,7 +96,7 @@ function smarter_archives( $args = '' )
 				$output .= get_month_link( $year, $month_number );
 				$output .= '" title="';
 				$output .= sprintf( _n( '1 post', '%d posts', $months[$month_number], 'smarter-archives' ), $months[$month_number] );
-				$output .= '"'. '">';
+				$output .= '">';
 				$output .= $month_name;
 				$output .= "</a></$month_tag>";
 			} else {
