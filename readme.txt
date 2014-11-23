@@ -1,8 +1,8 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 4.0
-Stable tag: 3.1.3
+Tested up to: 4.0.1
+Stable tag: 3.2
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -58,6 +58,10 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.2 =
+
+* Fixed bug related to the new i18n changes in WordPress 4.0
 
 = 3.1.3 =
 
