@@ -1,7 +1,7 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 4.0.1
+Tested up to: 4.1
 Stable tag: 3.2.1
 
 Easily navigate the yearly and monthly archives of your blog.
