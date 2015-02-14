@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 4.1
-Stable tag: 3.2.1
+Stable tag: 3.2.2
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -14,6 +14,7 @@ See the **Usage** section for a complete list of the arguments the shortcode tak
 
 The month names are [internationalized with the WordPress translation API](http://codex.wordpress.org/I18n_for_WordPress_Developers). A POT file is included, and if you want to translate please feel free to do so and [submit a new pull request](https://github.com/robinadr/smarter-archives/pulls) on GitHub. If you do not know how to use GitHub, you can also [contact me directly](http://robinadr.com/contact). Here are the translations that have been done so far:
 
+* Dutch (nl_NL)
 * French (fr_FR)
 * Italian (it_IT)
 * Spanish (es_ES)
@@ -58,6 +59,11 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.2.2 =
+
+* Update Italian translation
+* Add Dutch (nl_NL) translation, thanks to Micha.
 
 = 3.2.1 =
 
