@@ -63,7 +63,7 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 = 3.2.2 =
 
 * Update Italian translation
-* Add Dutch (nl_NL) translation, thanks to Micha.
+* Add Dutch (nl_NL) translation, thanks to Micha
 
 = 3.2.1 =
 
