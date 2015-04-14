@@ -2,7 +2,7 @@
 Contributors: rob1n
 Tags: archives, archive
 Tested up to: 4.1
-Stable tag: 3.2.2
+Stable tag: 3.2.3
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -59,6 +59,10 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.2.3 =
+
+* Add German (de_DE) translation, thanks to Jay Linski (@jaylinski)
 
 = 3.2.2 =
 
