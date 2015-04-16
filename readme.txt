@@ -1,7 +1,7 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 4.1
+Tested up to: 4.2
 Stable tag: 3.2.3
 
 Easily navigate the yearly and monthly archives of your blog.
@@ -16,6 +16,7 @@ The month names are [internationalized with the WordPress translation API](http:
 
 * Dutch (nl_NL)
 * French (fr_FR)
+* German (de_DE)
 * Italian (it_IT)
 * Spanish (es_ES)
 
