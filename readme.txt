@@ -1,8 +1,8 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 4.2
-Stable tag: 3.2.3
+Tested up to: 4.4
+Stable tag: 3.2.4
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -19,6 +19,7 @@ The month names are [internationalized with the WordPress translation API](http:
 * German (de_DE)
 * Italian (it_IT)
 * Spanish (es_ES)
+* Russian (ru_RU)
 
 The original concept for this plugin comes from the [Smart Archives](http://hypertext.net/projects/smartarchives/) plugin by Justin Blanton.
 
@@ -61,14 +62,18 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 
 == Changelog ==
 
+= 3.2.4 =
+
+* Added Russian (ru_RU) translation, thanks to [Alexander Tischenko](http://n-wp.ru/)
+
 = 3.2.3 =
 
-* Add German (de_DE) translation, thanks to Jay Linski (@jaylinski)
+* Added German (de_DE) translation, thanks to Jay Linski (@jaylinski)
 
 = 3.2.2 =
 
-* Update Italian translation
-* Add Dutch (nl_NL) translation, thanks to Micha
+* Updated Italian translation
+* Added Dutch (nl_NL) translation, thanks to Micha
 
 = 3.2.1 =
 
