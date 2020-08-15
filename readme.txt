@@ -1,8 +1,8 @@
 === Smarter Archives ===
 Contributors: rob1n
 Tags: archives, archive
-Tested up to: 4.4
-Stable tag: 3.2.4
+Tested up to: 5.5
+Stable tag: 3.2.5
 
 Easily navigate the yearly and monthly archives of your blog.
 
@@ -61,6 +61,11 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 	[smarter-archives order="DESC" after_month="&bull;"]
 
 == Changelog ==
+
+= 3.2.5 =
+
+* Fix issue with setting default options
+* Updated to WP 5.5
 
 = 3.2.4 =
 
