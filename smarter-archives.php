@@ -147,7 +147,7 @@ endif;
 
 function _smarter_archives_shortcode( $args = array() )
 {
-	$args['mode'] = 'return';
+	$args = shortcode_atts( array( 'mode' => 'return' ), $args, 'smarter-archives' );
 	return smarter_archives( $args );
 }
 add_shortcode( 'smarter-archives', '_smarter_archives_shortcode' );
