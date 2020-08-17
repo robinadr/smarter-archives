@@ -21,11 +21,11 @@ The month names are [internationalized with the WordPress translation API](http:
 * Spanish (es_ES)
 * Russian (ru_RU)
 
-The original concept for this plugin comes from the [Smart Archives](http://hypertext.net/projects/smartarchives/) plugin by Justin Blanton.
+The original concept for this plugin comes from a plugin by Justin Blanton.
 
 == Screenshots ==
 
-1. An example of the plugin in action [on my website](http://robinadr.com/archives).
+1. An example of the plugin in action on my website.
 
 == Installation ==
 
@@ -64,8 +64,8 @@ There is a function, `get_smarter_archives()`, that returns the raw array with t
 
 = 3.2.5 =
 
-* Fix issue with setting default options
-* Updated to WP 5.5
+* Fix issue with setting default options in shortcode
+* Updated compatibility up to WordPress 5.5
 
 = 3.2.4 =
 

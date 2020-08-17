@@ -4,13 +4,12 @@
 	Plugin URI: http://wordpress.org/plugins/smarter-archives/
 
 	Author: Robin Adrianse
-	Author URI: http://robinadr.com/
 
 	Description: Easy, simple, and intuitive way to access archives via months, broken down by year.
-	Version: 3.2.4
+	Version: 3.2.5
 	Text Domain: smarter-archives
 
-	Copyright (c) 2014 Robin Adrianse; see license.txt for full license
+	Copyright (c) 2020 Robin Adrianse; see license.txt for full license
 ***************************************************************************************************/
 
 function get_smarter_archives()
